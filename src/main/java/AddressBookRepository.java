@@ -176,7 +176,8 @@ public class AddressBookRepository implements AddressBookServiceInterface {
         } else
             System.out.println("\n No such AddressBook found. \n");
     }
-/* Search a person in AddressBook by city or state name*/
+/* Search a person in AddressBook by city or state name
+* AtomicInteger:reads and write automatically, a set of happens-before*/
     @Override
     public void searchPerson() {
         Hashtable<String, Hashtable<String ,ArrayList<String>>> searchList = new Hashtable<>();
@@ -226,6 +227,7 @@ public class AddressBookRepository implements AddressBookServiceInterface {
                 });
             break;
         }
+        //view person  by city name or state name
         System.out.println("\nViewing Persons by City or State\n" +searchList);
         System.out.println("\nNumber of contact persons i.e. count by City or State is : " +count +"\n");
     }
