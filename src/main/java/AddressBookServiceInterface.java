@@ -10,4 +10,5 @@ public interface AddressBookServiceInterface {
     Hashtable<String, ArrayList<AddressBook>> inserContactDetails();
 
     abstract void displayCompanyContacts(Hashtable<String, ArrayList<AddressBook>>addressBook);
+    abstract void editContactDetails(String replacedContact, Hashtable<String, ArrayList<AddressBook>>addressBook);
 }

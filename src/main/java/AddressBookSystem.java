@@ -26,6 +26,10 @@ public class AddressBookSystem {
                     System.out.println("\n"+"Add a new Address Book");
                     addressBook = add_Book.inserContactDetails();
                     break;
+                case 2:
+                    System.out.println("\n"+"Enter name of AddressBook that you want to replace:");
+                    String companyName = input.next();
+                    break;
                 case 4:
                     System.out.println("\n" +"Display all contacts");
                     add_Book.displayCompanyContacts(addressBook);

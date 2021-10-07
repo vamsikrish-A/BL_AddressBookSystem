@@ -73,5 +73,61 @@ public class AddressBookRepository implements AddressBookServiceInterface {
         });
 
     }
+    /*Overriding to edit addressBook */
 
+    @Override
+    public void editContactDetails(String addressBookName, Hashtable<String, ArrayList<AddressBook>> addressBook) {
+        System.out.println("\nEnter the first name you want to edit the details for : ");
+        String fName = input.next();
+
+        ArrayList<AddressBook> value = addressBook.get(addressBookName);
+        for (int j = 0; j < value.size(); j++) {
+            if (value.get(j).getFirst_name().equals(fName)) {
+                System.out.println("Choose your edit option: ");
+                System.out.println("1. Last Name");
+                System.out.println("2. Address");
+                System.out.println("3. City");
+                System.out.println("4. State");
+                System.out.println("5. Zip");
+                System.out.println("6. Phone Number");
+                System.out.println("7. Email");
+                int editOption = input.nextInt();
+
+                switch (editOption) {
+                    case 1 :
+                        System.out.println("Enter new lastName: ");
+                        value.get(j).setLast_name(input.next());
+                        break;
+                    case 2:
+                        System.out.println("Enter new Address: ");
+                        value.get(j).setAddress(input.next());
+                        break;
+                    case 3:
+                        System.out.println("Enter new City: ");
+                        value.get(j).setCity(input.next());
+                        break;
+                    case 4:
+                        System.out.println("Enter new State: ");
+                        value.get(j).setState(input.next());
+                        break;
+                    case 5:
+                        System.out.println("Enter new Zip: ");
+                        value.get(j).setZip(input.nextInt());
+                        break;
+                    case 6:
+                        System.out.println("Enter new Phone Number: ");
+                        value.get(j).setPhone_number(input.next());
+                        break;
+                    case 7:
+                        System.out.println("Enter new Email: ");
+                        value.get(j).setEmail(input.next());
+                        break;
+                }
+                System.out.println("\n updated successfully! \n");
+                break;
+            }
+            else
+                System.out.println("\n No FirstName Found!! \n");
+        }
+    }
 }

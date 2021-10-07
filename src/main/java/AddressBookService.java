@@ -18,4 +18,8 @@ public class AddressBookService implements AddressBookServiceInterface {
         addressBookRepository.displayCompanyContacts(addressBook);
     }
 
+    @Override
+    public void editContactDetails(String replacedContact, Hashtable<String, ArrayList<AddressBook>> addressBook) {
+        addressBookRepository.editContactDetails(replacedContact, addressBook);
+    }
 }
