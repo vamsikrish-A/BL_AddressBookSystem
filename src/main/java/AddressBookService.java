@@ -37,4 +37,9 @@ public class AddressBookService implements AddressBookServiceInterface {
     public void updateContact(String addressBookName, Hashtable<String, ArrayList<AddressBook>> addressBook) {
         addressBookRepository.updateContact(addressBookName,addressBook);
     }
+
+    @Override
+    public void searchPerson() {
+        addressBookRepository.searchPerson();
+    }
 }

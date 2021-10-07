@@ -14,4 +14,5 @@ public interface AddressBookServiceInterface {
     abstract void updateContact(String addressBookName, Hashtable<String ,ArrayList<AddressBook>>addressBook);
     abstract boolean findContact(String addressBookName, Hashtable<String ,ArrayList<AddressBook>>addressBook);
     abstract void deleteContact(String addressBookName, Hashtable<String ,ArrayList<AddressBook>>addressBook);
+    abstract void searchPerson();
 }

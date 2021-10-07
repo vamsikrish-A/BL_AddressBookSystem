@@ -40,6 +40,11 @@ public class AddressBookSystem {
                     System.out.println("\n" +"Display all contacts");
                     add_Book.displayCompanyContacts(addressBook);
                     break;
+                case 5:
+                    System.out.println("\n"+"Search Address Book based on city");
+                    add_Book.searchPerson();
+                    flag = true;
+                    break;
                 default:
                     System.out.println("Something went wrong!!");
             }
