@@ -73,7 +73,7 @@ public class AddressBookRepository implements AddressBookServiceInterface {
         });
 
     }
-    /*Overriding to edit addressBook */
+    /* editing addressBook */
 
     @Override
     public void editContactDetails(String addressBookName, Hashtable<String, ArrayList<AddressBook>> addressBook) {
@@ -130,7 +130,7 @@ public class AddressBookRepository implements AddressBookServiceInterface {
                 System.out.println("\n No FirstName Found!! \n");
         }
     }
-
+/* updating a contact using editContact*/
     @Override
     public void updateContact(String addressBookName, Hashtable<String, ArrayList<AddressBook>> addressBook) {
         boolean flag = findContact(addressBookName, addressBook);
@@ -140,7 +140,7 @@ public class AddressBookRepository implements AddressBookServiceInterface {
             System.out.println("\n no such AddressBook found.");
         }
     }
-
+/* Finding a contact*/
     @Override
     public boolean findContact(String addressBookName, Hashtable<String, ArrayList<AddressBook>> addressBook) {
         for (int i = 0; i < addressBook.size(); i++) {
@@ -150,7 +150,7 @@ public class AddressBookRepository implements AddressBookServiceInterface {
         return false;
 
     }
-
+/* deletes a contact*/
     @Override
     public void deleteContact(String addressBookName, Hashtable<String, ArrayList<AddressBook>> addressBook) {
         boolean found = false;
