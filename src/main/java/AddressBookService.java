@@ -22,4 +22,19 @@ public class AddressBookService implements AddressBookServiceInterface {
     public void editContactDetails(String replacedContact, Hashtable<String, ArrayList<AddressBook>> addressBook) {
         addressBookRepository.editContactDetails(replacedContact, addressBook);
     }
+
+    @Override
+    public void deleteContact(String deletedName, Hashtable<String, ArrayList<AddressBook>> addressBook) {
+        addressBookRepository.deleteContact(deletedName, addressBook);
+    }
+
+    @Override
+    public boolean findContact(String addressBookName, Hashtable<String, ArrayList<AddressBook>> addressBook) {
+        return addressBookRepository.findContact(addressBookName,addressBook);
+    }
+
+    @Override
+    public void updateContact(String addressBookName, Hashtable<String, ArrayList<AddressBook>> addressBook) {
+        addressBookRepository.updateContact(addressBookName,addressBook);
+    }
 }

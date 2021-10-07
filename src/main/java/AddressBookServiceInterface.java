@@ -11,4 +11,7 @@ public interface AddressBookServiceInterface {
 
     abstract void displayCompanyContacts(Hashtable<String, ArrayList<AddressBook>>addressBook);
     abstract void editContactDetails(String replacedContact, Hashtable<String, ArrayList<AddressBook>>addressBook);
+    abstract void updateContact(String addressBookName, Hashtable<String ,ArrayList<AddressBook>>addressBook);
+    abstract boolean findContact(String addressBookName, Hashtable<String ,ArrayList<AddressBook>>addressBook);
+    abstract void deleteContact(String addressBookName, Hashtable<String ,ArrayList<AddressBook>>addressBook);
 }

@@ -28,8 +28,14 @@ public class AddressBookSystem {
                     break;
                 case 2:
                     System.out.println("\n"+"Enter name of AddressBook that you want to replace:");
-                    String companyName = input.next();
+                    String addressBookName = input.next();
+                    add_Book.updateContact(addressBookName, addressBook);
                     break;
+                case 3:
+                    System.out.print("\n" + "Enter the name of the Address Book that you want to delete: ");
+                    String deleteAddressBookName = input.next();
+                    add_Book.deleteContact(deleteAddressBookName, addressBook);
+
                 case 4:
                     System.out.println("\n" +"Display all contacts");
                     add_Book.displayCompanyContacts(addressBook);

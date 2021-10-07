@@ -130,4 +130,49 @@ public class AddressBookRepository implements AddressBookServiceInterface {
                 System.out.println("\n No FirstName Found!! \n");
         }
     }
+
+    @Override
+    public void updateContact(String addressBookName, Hashtable<String, ArrayList<AddressBook>> addressBook) {
+        boolean flag = findContact(addressBookName, addressBook);
+        if (flag == true) {
+            editContactDetails(addressBookName, addressBook);
+        } else {
+            System.out.println("\n no such AddressBook found.");
+        }
+    }
+
+    @Override
+    public boolean findContact(String addressBookName, Hashtable<String, ArrayList<AddressBook>> addressBook) {
+        for (int i = 0; i < addressBook.size(); i++) {
+            if (addressBook.containsKey(addressBookName))
+                return true;
+        }
+        return false;
+
+    }
+
+    @Override
+    public void deleteContact(String addressBookName, Hashtable<String, ArrayList<AddressBook>> addressBook) {
+        boolean found = false;
+        boolean flag = findContact(addressBookName, addressBook);
+
+        if (flag == true) {
+            System.out.println("\n Enter the first name want to delete: ");
+            String fName = input.next();
+
+            ArrayList<AddressBook> value = addressBook.get(addressBookName);
+            for (int i = 0; i < value.size(); i++) {
+                if (value.get(i).getFirst_name().equals(fName)) {
+                    value.remove(i);
+                    found = true;
+                    break;
+                }
+            }
+            if (found == true) {
+                System.out.println("\n Contact deleted successfully. \n");
+            } else
+                System.out.println("\n No Such contact found.\n");
+        } else
+            System.out.println("\n No such AddressBook found. \n");
+    }
 }
