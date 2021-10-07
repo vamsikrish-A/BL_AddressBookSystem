@@ -17,7 +17,7 @@ public class AddressBookRepository implements AddressBookServiceInterface {
 /* here Overriding interface methods to insert.
 * addressBookName will the key value here, rest all to arraylist<AddressBook>.
 * ArrayList value maps the addressBookName key .
-* checking the Duplicate values   */
+*  Checks the Duplicates  */
     public Hashtable<String, ArrayList<AddressBook>> inserContactDetails() {
         boolean found = false;
 
@@ -40,7 +40,7 @@ public class AddressBookRepository implements AddressBookServiceInterface {
         addBook.setPhone_number(input.next());
         System.out.println("Enter Email : ");
         addBook.setEmail(input.next());
-
+        //checks duplicate values
         if (addressBook.containsKey(addressBookName)) {
             ArrayList<AddressBook> value = addressBook.get(addressBookName);
             for (int i = 0; i < value.size(); i++) {
