@@ -227,8 +227,9 @@ public class AddressBookRepository implements AddressBookServiceInterface {
                 });
             break;
         }
-        //view person  by city name or state name
+        //view person  by city name or state name.
         System.out.println("\nViewing Persons by City or State\n" +searchList);
+        //counting persos by city or state name .
         System.out.println("\nNumber of contact persons i.e. count by City or State is : " +count +"\n");
     }
 }
