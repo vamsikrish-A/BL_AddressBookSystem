@@ -1,2 +1,2 @@
-V1[AddressBook{first_name='V', last_name='k', address='tpt', city='null', state='Ap', zip=12, phone_number='12342', email='mail1'}]
-V2[AddressBook{first_name='v1', last_name='k1', address='tpt1', city='null', state='Tn', zip=23, phone_number='6788', email='mail2'}]
+V1[AddressBook{first_name='v1', last_name='k1', address='tpt', city='null', state='ap', zip=123, phone_number='567432', email='mail1'}]
+V2[AddressBook{first_name='v2', last_name='k2', address='tpt2', city='null', state='tn', zip=23, phone_number='435234', email='mail2'}]

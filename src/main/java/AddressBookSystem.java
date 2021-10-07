@@ -19,6 +19,7 @@ public class AddressBookSystem {
         Hashtable<String, ArrayList<AddressBook>> addressBook = new Hashtable<>();
 
         ReadWriteOperations readWriteOperations = new ReadWriteOperations();
+        ReadWriteCSVFile readWriteCSVFile = new ReadWriteCSVFile();
         boolean flag = true;
         int option;
         while (flag) {
@@ -28,6 +29,7 @@ public class AddressBookSystem {
                     System.out.println("\n"+"Add a new Address Book");
                     addressBook = add_Book.inserContactDetails();
                     readWriteOperations.writeInAddressBook(addressBook);
+                    readWriteCSVFile.writeCSVFile(addressBook);
                     break;
                 case 2:
                     System.out.println("\n"+"Enter name of AddressBook that you want to replace:");
@@ -43,6 +45,7 @@ public class AddressBookSystem {
                     System.out.println("\n" +"Display all contacts");
                     add_Book.displayCompanyContacts(addressBook);
                     readWriteOperations.readFromAddressBook();
+                    readWriteCSVFile.readCSVFile();
                     break;
                 case 5:
                     System.out.println("\n"+"Search Address Book based on city");
@@ -50,7 +53,8 @@ public class AddressBookSystem {
                     flag = true;
                     break;
                 default:
-                    System.out.println("Something went wrong!!");
+                    flag = false;
+                    System.out.println("Thanks you!!");
             }
         }
     }
